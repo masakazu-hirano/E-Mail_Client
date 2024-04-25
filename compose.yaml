@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  E-Mail_Client:
+    platform: linux/amd64
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    image: mail_client:latest
+    container_name: E-Mail_Client
+    volumes:
+      - ./Backend:/usr/local/src:delegated
+    tty: true
